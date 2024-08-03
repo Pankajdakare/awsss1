@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>body {
+          background-color: #f2eee3;
+        }
+        
+        header {
+          min-height: 100px;
+        }
+        
+        main {
+          min-height: 100vh;
+        }
+        
+        .container-fluid {
+          margin: 0;
+          padding: 0;
+        }
+        .container-fluid .row {
+          margin: 0;
+          padding: 0;
+        }
+        
+        
+        .dropdown:hover > .dropdown-menu {
+          display: block;
+        }
+        
+        .megamenu {
+          position: static;
+        }
+        .megamenu .dropdown-menu {
+          border: none;
+          width: 100%;
+           
+        }</style>
+    </head>
+    <body>
+        <div class="container-fluid">
+           <!-- start of row 1 hedaer/ navbar -->
+             <div class="container mb-">
+           <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 shadow-sm fixed-top" style="height: 7vh;">
+            <div class="navbar-logo">
+              <a class="navbar-brand" href="#">TECHMART</a>
+            </div>
+          </a>
+            <div id="navbarContent" class="collapse navbar-collapse order-sm-12 order-lg-1">
+              <ul class="navbar-nav ml-auto">
+                <!-- Megamenu-->
+                <li class="nav-item dropdown megamenu"><a id="megamenu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle font-weight-bold text-uppercase">Sponsor</a>
+                  <div aria-labelledby="megamenu" class="dropdown-menu border-0 p-0 m-0">
+                    <div class="container-fluid">
+                      <div class="row bg-dark text-light rounded-0 m-0 shadow-sm">
+                        <div class="col-12">
+                          <div class="p-4">
+                            <div class="row">
+                              <div class="col-sm-6 col-lg-3 mb-4">
+                                <h6 class="font-weight-bold text-uppercase">ASUS</h6>
+                                <ul class="list-unstyled">
+                                  <li class="nav-item"><a href="https://rog.asus.com/in/" class="nav-link text-small pb-0">Unique Features</a></li>
+                                  <li class="nav-item"><a href="https://rog.asus.com/in/laptops-group/" class="nav-link text-small pb-0 ">Images </a></li>
+                                  <li class="nav-item"><a href="https://www.connect.asus.com/ASUSIoT_ContactSales" class="nav-link text-small pb-0 ">Description</a></li>
+                                  <li class="nav-item"><a href="https://www.asus.com/in/support/" class="nav-link text-small pb-0 ">About_Asus</a></li>
+                                </ul>
+                              </div>
+                              <div class="col-sm-6 col-lg-3 mb-4">
+                                <h6 class="font-weight-bold text-uppercase">DELL</h6>
+                                <ul class="list-unstyled">
+                                  <li class="nav-item"><a href="https://www.dell.com/en-us" class="nav-link text-small pb-0">Unique Features</a></li>
+                                  <li class="nav-item"><a href="https://www.dell.com/en-in/shop/scc/sc/laptops" class="nav-link text-small pb-0 ">Images </a></li>
+                                  <li class="nav-item"><a href="https://www.dell.com/community/en/categories/dell-community?profile.language=en" class="nav-link text-small pb-0 ">Description</a></li>
+                                  <li class="nav-item"><a href="https://www.dell.com/support/home/en-in" class="nav-link text-small pb-0 ">About_DELL</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="nav-item"><a href="/contactus" class="nav-link font-weight-bold text-uppercase">Contact</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">LOGOUT </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/mycart">MYCART </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/">CARTORDER </a>
+                </li>
+                {% else %}
+                <li class="nav-item"><a href="/login" class="nav-link font-weight-bold text-uppercase">login</a></li>
+                <li class="nav-item"><a href="/register" class="nav-link font-weight-bold text-uppercase">Register</a></li>
+                {% endif %}
+
+  
+              </ul>
+            </div>
+            <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-md-1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+          </nav>
+            </div> <!-- end of row 1/ hedaer/ navbar -->
